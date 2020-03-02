@@ -1,0 +1,39 @@
+<!--pages/course/course.wxml-->
+<scroll-view class="scroll-container" scroll-y="true">
+  <view class="title-view">
+      <image src="{{src}}" ></image>
+      <text class="demo-text-1">{{courseName}}</text>
+      <text class="demo-text-2">已更新{{courseCount}}节|最近课程{{createTime}}</text>
+      <text class="demo-text-3">￥{{coursePrice}}</text>
+  </view>
+  <view class="info-view">
+    <view class="head">
+      <view class="head_item {{selected?'head_itemActive':''}}" bindtap="tab1Selected">详情</view>
+      <view class="ring"></view>
+      <view class="head_item {{selected1?'head_itemActive':''}}" bindtap='tab2selected'>目录</view>
+    </view>
+    <view class="main {{selected?'show':'hidden'}}">
+      <rich-text nodes="{{content}}" bindtap="tap"></rich-text>
+    </view>
+    <view class="main {{selected1?'show':'hidden'}}">
+      <view wx:for="{{note}}" wx:key="key"> 
+          <view class="cover-view-study" bindtap="viewClick"  data-index="{{item.id}}">        
+                <image src="{{item.url}}" mode='aspectFill' lazy-load="true"></image>
+                <view class="cover-view-study-text">
+                  <text class="demo-text-1">{{item.title}}</text>
+                  <text class="demo-text-2">{{item.createTime}}</text>
+                  <text class="demo-text-3">￥{{item.videoPrice}}</text>
+                </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class="pay-view {{showView?'header_view_show':'header_view_hide'}}">
+  <text class="demo-text-4">支付￥{{coursePrice}}</text>
+  <button class="pay-view-btn1" size="mini" type="primary" bindtap="payConfirmBtnclick">确认</button>
+  <button class="pay-view-btn2" size="mini" type="primary" bindtap="payCancelBtnclick">取消</button>
+</view>
+<view class="btn-view">
+  <button type="primary" bindtap="btnclick">{{courseSubmitTxt}}</button>
+</view>

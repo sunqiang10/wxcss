@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class='case-page'>
+ <view class="form_row">
+    <picker bindchange="bindPickerChange" value="{{chooseValues[1]}}" range="{{array1}}" data-index="1">
+      <view class="picker">
+        <text>課程分类：</text>
+        <text style="margin-left:8px">{{array1[chooseValues[1]]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='list-masonry'>
+    <view class='item-masonry' wx:for="{{note}}" wx:key="key">
+      <view>
+        <navigator url="../vView/vViewInfo?id={{item.id}}" open-type="navigate" class="uploader-text">
+          <image src='{{item.url}}' mode='aspectFill' lazy-load="true"></image>
+        </navigator>      
+        <view class="coverContainer">
+            <text class="demo-text-1">{{item.title}}</text>
+            <text class="demo-text-2">{{item.createTime}}</text>
+        </view>
+       </view>
+    </view>
+  </view>
+</view>

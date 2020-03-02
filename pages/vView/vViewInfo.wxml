@@ -1,0 +1,15 @@
+<!--miniprogram/pages/vView/vViewInfo.wxml-->
+<view class="video-view">
+     <video id="myVideo" src="{{src}}" class="video-video" autoplay='true'></video>
+        <navigator url="../course/course?courseId={{courseId}}" open-type="navigate" class="uploader-text">
+          <view class="cover-view-study ">        
+              <image src="../resource/images/gouwuche.png"></image>
+              <text class="demo-text-1">《{{videoTitle}}》\n{{videoDesc}}</text>
+          </view>
+        </navigator>
+      <view class="cover-view-icon">      
+        <image src="../resource/images/dianzan.png"></image>
+        <image src="../resource/images/pinglun.png"></image>  
+        <image src="../resource/images/fenxiang.png"></image>
+      </view>
+</view>

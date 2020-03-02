@@ -1,0 +1,7 @@
+<!--pages/course/courseInfo.wxml-->
+<view class="video-view">
+     <video id="myVideo" src="{{src}}" class="video-video" autoplay='true'></video>
+</view>
+<view class="btn-view">
+  <button type="primary" bindtap="btnclick" style="width:100%">返回</button>
+</view>

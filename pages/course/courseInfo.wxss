@@ -1,0 +1,18 @@
+/* pages/course/courseInfo.wxss */
+page{
+  height: 100%;
+}
+.video-view {
+  width:100%;
+  height:calc(100% - 40px); 
+  text-align: center;
+}
+.video-video{
+  width:100%;
+  height: 100%;
+}
+.btn-view{
+  width: 100%;
+  height: 40px;
+  background-color: white;
+}
